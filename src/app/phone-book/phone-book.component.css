@@ -1,0 +1,154 @@
+.container{
+    width: 90%;
+}
+.input{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-control{
+    width: 80%;
+}
+
+
+table{
+    width: 100%;
+}
+
+tr:hover{
+    background-color: white;
+}
+
+.fname{
+    width: 200px;
+}
+
+.lname{
+    width: 200px;
+}
+
+.num{
+    width: 200px;
+}
+
+.edit{
+    width: 120px;
+}
+
+.delete{
+    width: 120px;
+}
+
+.save{
+    border-color: #f4f4f4;
+}
+
+.sign-In {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.form-signIn {
+    color: black;
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 40%;
+    text-align: center;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.form-control{
+    width: 100%;
+}
+
+.btn-signIn {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    background-color: #1270db;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+}
+
+.form-control-input{
+    display: block;
+    width: 80%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-control-input:focus{
+    color: #212529;
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow:0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+
+.form-control-wrong{
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    border-color: rgb(253, 46, 46);
+    outline: 0;
+    box-shadow:0 0 0 0.25rem rgb(225 140 140 / 25%);
+}
+
+.btn btn-success{
+    width: 200px;
+}
+
+.btn-warning{
+    width: 100px;
+}
+
+
+.btn-success{
+    width: 200px;
+}
+
+.btn-danger{
+    width: 100px;
+}
+
+img{
+    position: absolute;
+    margin-left: 85px;
+    margin-top: -20px;
+}

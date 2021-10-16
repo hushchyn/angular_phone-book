@@ -1,0 +1,67 @@
+<div class="container">
+  <h2>My phone book</h2>
+  <hr>
+  <div class="input">
+    <input class="form-control-input" type="text" [(ngModel)]="field" aria-label="default input example">
+    <button type="button" class="btn btn-success" (click)="openModal()">add phone</button>
+
+  </div>
+  <hr>
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="fname" scope="col" (click)="sortList('first', 'reverseFirst')"> First Name 
+          <div *ngIf="firstColumnDirection" >
+          <img *ngIf="!arrow" src="https://img.icons8.com/material-sharp/24/000000/sort-down.png"/>
+          <img *ngIf="arrow" src="https://img.icons8.com/material-sharp/24/000000/sort-up.png"/>
+        </div>
+        </th>
+        <th class="lname" scope="col" (click)="sortList('second', 'reverseSecond')"  >Last Name
+          <div *ngIf="secondColumnDirection" >
+          <img *ngIf="!arrow" src="https://img.icons8.com/material-sharp/24/000000/sort-down.png"/>
+          <img *ngIf="arrow" src="https://img.icons8.com/material-sharp/24/000000/sort-up.png"/>
+          </div>
+        </th>
+        <th class="num" scope="col" (click)="sortList('number', 'reverseNumber')" >Number
+          <div *ngIf="thirdColumnDirection">
+          <img *ngIf="!arrow" src="https://img.icons8.com/material-sharp/24/000000/sort-down.png"/>
+          <img *ngIf="arrow" src="https://img.icons8.com/material-sharp/24/000000/sort-up.png"/>
+          </div>
+        </th>
+        <th class="edit" scope="col">Edit</th>
+        <th class="delete" scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of myContacts | search:field | sort:sortPhoneBook.column;  let i = index; ">
+        <td>{{ contact.firstName }}</td>
+        <td>{{ contact.lastName }}</td>
+        <td>{{ contact.phone }}</td>
+        <td> <button type="button" class="btn btn-warning" (click)="edit(i)">Edit</button></td>
+        <td> <button type="button" class="btn btn-danger" (click)="deleteContact(i)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="modal-signIn" class="sign-In" *ngIf="modal">
+  <form name="aaa" class="form-signIn">
+    <p class="title-form">Add phone</p>
+    <hr>
+    <div class="mb-3">
+      <input type="text" [ngClass]="{'form-control': input, 'form-control-wrong' :!input}" [(ngModel)]="firstName"
+        placeholder="first name goes here..." name="email">
+    </div>
+    <div class="mb-3">
+      <input type="text" [ngClass]="{'form-control': input, 'form-control-wrong' :!input}" [(ngModel)]="lastName"
+        placeholder="second name goes here..." name="lastName">
+    </div>
+    <div class="mb-3">
+      <input type="text" [ngClass]="{'form-control': input, 'form-control-wrong' :!input}" [(ngModel)]="phone"
+        placeholder="number phone goes here..." name="phone">
+    </div>
+    <button type="button" class="btn-signIn" *ngIf="add" (click)="addContact()">Save</button>
+    <button type="button" class="btn-signIn" *ngIf="!add" (click)="saveContact()">Save</button>
+  </form>
+</div>
